@@ -16,6 +16,11 @@ const useStyle = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "flex-end",
     },
+    logo: {
+      color: "black",
+      textDecoration: "none",
+      fontSize: 30,
+    },
   }),
 );
 const TopNavbar = () => {
@@ -24,12 +29,8 @@ const TopNavbar = () => {
   return (
     <Grid container className={classes.root}>
       <Grid item xs={6}>
-        <Link to="/">
-          <img
-            src="https://static-assets.filmfreeway.com/assets/filmfreeway-logo-hires-black-2dd68bff7fa8cc8fb193c32f87060795.png"
-            alt="logo"
-            height="60"
-          />
+        <Link className={classes.logo} to="/">
+          <p>Movie App</p>
         </Link>
       </Grid>
       <Grid style={{ display: "flex", justifyContent: "flex-end" }} item xs={6}>

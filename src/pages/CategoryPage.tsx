@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { History } from "history";
 import { genres, Movie, movies } from "../movies";
-import MovieList from "../components/MovieList";
 import HeroSection from "../components/HeroSection";
 import TopNavbar from "../components/Navbar";
 import { Grid } from "@material-ui/core";
@@ -14,11 +13,13 @@ interface Props {
 
 const CategoryPage = (props: Props) => {
   const [fMovies, setFMovies] = useState([]);
+  // eslint-disable-next-line
   const category: any = genres.find((data) => data.id == props.match.params.id);
 
   useEffect(() => {
     setFMovies((): any => {
       return movies.filter((mov) =>
+        // eslint-disable-next-line
         mov.genre_ids.some((id) => id == props.match.params.id),
       );
     });
