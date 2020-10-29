@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <Switch>
       <Suspense fallback={<Spinner />}>
         <Route path="/" component={Home} exact />
-        <Route path="/:title" component={SingleMoviePage} />
+        <Route path="/movie/:title" component={SingleMoviePage} />
       </Suspense>
     </Switch>
   );

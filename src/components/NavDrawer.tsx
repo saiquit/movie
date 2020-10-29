@@ -2,6 +2,7 @@ import {
   createStyles,
   Divider,
   Drawer,
+  Icon,
   List,
   ListItem,
   ListItemIcon,
@@ -9,8 +10,8 @@ import {
   makeStyles,
   Theme,
 } from "@material-ui/core";
-import { Inbox, Mail } from "@material-ui/icons";
 import React, { Dispatch, SetStateAction } from "react";
+import { genres } from "../movies";
 
 interface Props {
   open: boolean;
@@ -40,13 +41,13 @@ const NavDrawer: React.FC<Props> = ({ open, setOpen }: Props) => {
       }}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {genres.map((text, index) => (
           <>
-            <ListItem button key={text}>
+            <ListItem button key={text.id}>
               <ListItemIcon>
-                {index % 2 === 0 ? <Inbox /> : <Mail />}
+                <Icon component={text.icon} />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text.name} />
             </ListItem>
             <Divider />
           </>

@@ -1,3 +1,25 @@
+import {
+  Movie as MovieIcon,
+  VideogameAsset,
+  Android,
+  Assessment,
+  Assignment,
+  Dock,
+  FilterDrama,
+  People,
+  FaceRounded,
+  History,
+  HomeRounded,
+  MusicNote,
+  Money,
+  RoomSharp,
+  ScannerOutlined,
+  Tv,
+  ThreeSixty,
+  Warning,
+  WebSharp,
+} from "@material-ui/icons";
+
 export interface Movie {
   popularity: number;
   vote_count: number;
@@ -363,28 +385,29 @@ export const oldMovie: Movie[] = [
 export interface Genres {
   id: number;
   name: string;
+  icon: any;
 }
 
 export const genres: Genres[] = [
-  { id: 28, name: "Action" },
-  { id: 12, name: "Adventure" },
-  { id: 16, name: "Animation" },
-  { id: 35, name: "Comedy" },
-  { id: 80, name: "Crime" },
-  { id: 99, name: "Documentary" },
-  { id: 18, name: "Drama" },
-  { id: 10751, name: "Family" },
-  { id: 14, name: "Fantasy" },
-  { id: 36, name: "History" },
-  { id: 27, name: "Horror" },
-  { id: 10402, name: "Music" },
-  { id: 9648, name: "Mystery" },
-  { id: 10749, name: "Romance" },
-  { id: 878, name: "Science Fiction" },
-  { id: 10770, name: "TV Movie" },
-  { id: 53, name: "Thriller" },
-  { id: 10752, name: "War" },
-  { id: 37, name: "Western" },
+  { id: 28, name: "Action", icon: MovieIcon },
+  { id: 12, name: "Adventure", icon: VideogameAsset },
+  { id: 16, name: "Animation", icon: Android },
+  { id: 35, name: "Comedy", icon: Assessment },
+  { id: 80, name: "Crime", icon: Assignment },
+  { id: 99, name: "Documentary", icon: Dock },
+  { id: 18, name: "Drama", icon: FilterDrama },
+  { id: 10751, name: "Family", icon: People },
+  { id: 14, name: "Fantasy", icon: FaceRounded },
+  { id: 36, name: "History", icon: History },
+  { id: 27, name: "Horror", icon: HomeRounded },
+  { id: 10402, name: "Music", icon: MusicNote },
+  { id: 9648, name: "Mystery", icon: Money },
+  { id: 10749, name: "Romance", icon: RoomSharp },
+  { id: 878, name: "Science Fiction", icon: ScannerOutlined },
+  { id: 10770, name: "TV Movie", icon: Tv },
+  { id: 53, name: "Thriller", icon: ThreeSixty },
+  { id: 10752, name: "War", icon: Warning },
+  { id: 37, name: "Western", icon: WebSharp },
 ];
 export const movies: Movie[] = oldMovie.sort(
   (a: Movie, b: Movie) =>

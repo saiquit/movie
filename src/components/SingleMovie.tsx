@@ -99,7 +99,7 @@ const SingleMovie = ({ movie }: Props) => {
           <Link
             className={classes.expand}
             to={{
-              pathname: `/${movie.id}`,
+              pathname: `/movie/${movie.id}`,
               state: movie,
             }}
           >
