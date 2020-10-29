@@ -3,6 +3,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Grid, IconButton } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import NavDrawer from "./NavDrawer";
+import { Link } from "react-router-dom";
 
 const useStyle = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,11 +24,13 @@ const TopNavbar = () => {
   return (
     <Grid container className={classes.root}>
       <Grid item xs={6}>
-        <img
-          src="https://static-assets.filmfreeway.com/assets/filmfreeway-logo-hires-black-2dd68bff7fa8cc8fb193c32f87060795.png"
-          alt="logo"
-          height="60"
-        />
+        <Link to="/">
+          <img
+            src="https://static-assets.filmfreeway.com/assets/filmfreeway-logo-hires-black-2dd68bff7fa8cc8fb193c32f87060795.png"
+            alt="logo"
+            height="60"
+          />
+        </Link>
       </Grid>
       <Grid style={{ display: "flex", justifyContent: "flex-end" }} item xs={6}>
         <IconButton onClick={() => setOpen(true)} className={classes.menu}>

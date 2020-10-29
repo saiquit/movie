@@ -7,15 +7,17 @@ import Spinner from "./components/Spinner";
 
 const SingleMoviePage = React.lazy(() => import("./pages/SingleMoviePage"));
 const Home = React.lazy(() => import("./pages/Home"));
+const CategoryPage = React.lazy(() => import("./pages/CategoryPage"));
 
 const App: React.FC = () => {
   return (
-    <Switch>
-      <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<Spinner />}>
+      <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/movie/:title" component={SingleMoviePage} />
-      </Suspense>
-    </Switch>
+        <Route path="/category/:id" component={CategoryPage} exact />
+      </Switch>
+    </Suspense>
   );
 };
 

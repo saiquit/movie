@@ -1,12 +1,15 @@
 import { Grid } from "@material-ui/core";
 import { Pagination } from "@material-ui/lab";
 import React, { useState } from "react";
-import { movies } from "../movies";
+import { Movie } from "../movies";
 import SingleMovie from "./SingleMovie";
 
-const MovieList = () => {
-  const [filteredMovie, setFilteredMovie] = useState(movies.slice(0, 8));
+interface Props {
+  movies: Movie[];
+}
 
+const MovieList = ({ movies }: Props) => {
+  const [filteredMovie, setFilteredMovie] = useState(movies.slice(0, 8));
   const handleChange:
     | ((event: React.ChangeEvent<unknown>, page: number) => void)
     | undefined = (e, page) => {

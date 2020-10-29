@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import React, { Dispatch, SetStateAction } from "react";
 import { genres } from "../movies";
+import { Link } from "react-router-dom";
 
 interface Props {
   open: boolean;
@@ -24,6 +25,11 @@ const useStyle = makeStyles((theme: Theme) =>
     },
     drawerPaper: {
       width: 300,
+    },
+    name: {
+      textDecoration: "none",
+      color: theme.palette.grey[900],
+      fontWeight: theme.typography.fontWeightMedium,
     },
   }),
 );
@@ -43,13 +49,15 @@ const NavDrawer: React.FC<Props> = ({ open, setOpen }: Props) => {
       <List>
         {genres.map((text, index) => (
           <>
-            <ListItem button key={text.id}>
-              <ListItemIcon>
-                <Icon component={text.icon} />
-              </ListItemIcon>
-              <ListItemText primary={text.name} />
-            </ListItem>
-            <Divider />
+            <Link className={classes.name} to={`/category/${text.id}`}>
+              <ListItem button key={text.id}>
+                <ListItemIcon>
+                  <Icon component={text.icon} />
+                </ListItemIcon>
+                <ListItemText primary={text.name} />
+              </ListItem>
+              <Divider />
+            </Link>
           </>
         ))}
       </List>

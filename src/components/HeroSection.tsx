@@ -20,12 +20,15 @@ const useStyle = makeStyles((theme: Theme) =>
     },
   }),
 );
-const HeroSection = () => {
+interface Props {
+  title: string;
+}
+const HeroSection = ({ title }: Props) => {
   const classes = useStyle();
   return (
     <div className={classes.root}>
       <div className={classes.overlay}>
-        <h1 className={classes.heading}>Movie WebApp</h1>
+        <h1 className={classes.heading}>{title}</h1>
       </div>
     </div>
   );
