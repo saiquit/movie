@@ -49,7 +49,11 @@ const NavDrawer: React.FC<Props> = ({ open, setOpen }: Props) => {
       <List>
         {genres.map((text, index) => (
           <>
-            <Link className={classes.name} to={`/category/${text.id}`}>
+            <Link
+              onClick={() => setOpen(false)}
+              className={classes.name}
+              to={`/category/${text.id}`}
+            >
               <ListItem button key={text.id}>
                 <ListItemIcon>
                   <Icon component={text.icon} />
